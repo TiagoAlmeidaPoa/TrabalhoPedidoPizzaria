@@ -37,11 +37,7 @@ public class IncluirPedidoTest {
 			.body("mesa", Matchers.equalTo(1))
 			.body("itens.nome", Matchers.hasItems("guarana","pizza calabresa","fritas"))
 			.body("itens.valor", Matchers.hasItems(6,30,12))
-			.statusCode(HttpStatus.OK.value());
-		
-			
-			
-			
+			.statusCode(HttpStatus.OK.value());			
 			
 			
 	}
