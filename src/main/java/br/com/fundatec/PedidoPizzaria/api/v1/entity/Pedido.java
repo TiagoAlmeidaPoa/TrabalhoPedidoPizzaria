@@ -1,8 +1,11 @@
 package br.com.fundatec.PedidoPizzaria.api.v1.entity;
 
+import java.util.List;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Pedido {
 	
@@ -11,17 +14,18 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private int mesa;
-	private String itens;
-	private String valores;
+	
+	@OneToMany(mappedBy = "pedido")
+	private List<Item> itens;
 	
 	public Pedido() {
 		
 	}
 
-	public Pedido(int mesa, String itens, String valores) {		
+	public Pedido(Long id, int mesa, List<Item> itens) {
+		this.id = id;
 		this.mesa = mesa;
 		this.itens = itens;
-		this.valores = valores;
 	}
 
 	public Long getId() {
@@ -40,20 +44,12 @@ public class Pedido {
 		this.mesa = mesa;
 	}
 
-	public String getItens() {
+	public List<Item> getItens() {
 		return itens;
 	}
 
-	public void setItens(String itens) {
+	public void setItens(List<Item> itens) {
 		this.itens = itens;
-	}
-
-	public String getValores() {
-		return valores;
-	}
-
-	public void setValores(String valores) {
-		this.valores = valores;
 	}
 	
 	

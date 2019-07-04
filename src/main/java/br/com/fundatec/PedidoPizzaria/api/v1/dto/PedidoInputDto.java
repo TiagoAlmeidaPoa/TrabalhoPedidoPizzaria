@@ -1,10 +1,14 @@
 package br.com.fundatec.PedidoPizzaria.api.v1.dto;
 
+import java.util.List;
+
+import br.com.fundatec.PedidoPizzaria.api.v1.entity.Item;
+
 public class PedidoInputDto {
 	
+	
 	private int mesa;
-	private String itens;
-	private String valores;
+	private List<Item> itens;
 	
 	public int getMesa() {
 		return mesa;
@@ -12,19 +16,15 @@ public class PedidoInputDto {
 	public void setMesa(int mesa) {
 		this.mesa = mesa;
 	}
-	public String getItens() {
+	public List<Item> getItens() {
 		return itens;
 	}
-	public void setItens(String itens) {
+	public void setItens(List<Item> itens) {
 		this.itens = itens;
 	}
-	public String getValores() {
-		return valores;
-	}
-	public void setValores(String valores) {
-		this.valores = valores;
-	}
 	
 	
-
+	
+	
+		
 }

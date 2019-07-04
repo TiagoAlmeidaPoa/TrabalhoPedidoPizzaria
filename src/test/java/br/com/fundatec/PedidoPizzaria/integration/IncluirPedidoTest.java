@@ -1,9 +1,5 @@
 package br.com.fundatec.PedidoPizzaria.integration;
 
-import static org.mockito.Mockito.when;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.RestoreAction;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,12 +28,21 @@ public class IncluirPedidoTest {
 			.body("{" + 
 					"	\"mesa\": 1," + 
 					"	\"itens\": \"guarana|pizza calabresa|fritas\"," + 
-					"	\"valores\": \"6.00|30.00|12.00\"" + 
+					"	\"valores\": \"6|30|12\"" + 
 					"" + 
 					"}")
 			.when()
 			.post("/v1/pedidos")
 			.then()
+			.body("mesa", Matchers.equalTo(1))
+			.body("itens.nome", Matchers.hasItems("guarana","pizza calabresa","fritas"))
+			.body("itens.valor", Matchers.hasItems(6,30,12))
+			.statusCode(HttpStatus.OK.value());
+		
+			
+			
+			
+			
 			
 	}
 
