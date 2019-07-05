@@ -18,7 +18,7 @@ public class Pedido {
 	@Column(length = 30, nullable = false)
 	private Integer mesa;
 
-	@OneToMany(mappedBy = "pessoa")
+	@OneToMany(mappedBy = "pedido")
 	private List<Item> itens;
 
 	public Pedido() {

@@ -34,7 +34,7 @@ public class SwaggerConfig {
                 .globalResponseMessage(RequestMethod.PUT, defaultResponses)
                 .select()
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("br.com.fundatec.ExemploApis"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.fundatec.PedidoPizzaria"))
                 .build();
     }
 
