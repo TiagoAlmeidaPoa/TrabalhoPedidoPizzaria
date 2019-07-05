@@ -26,12 +26,11 @@ public class Item {
 
 	}
 
-	public Item(Long id, String nome, Integer valor, Pedido pedido) {
+	public Item(Long id, String nome, Integer valor) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.valor = valor;
-		this.pedido = pedido;
+		this.valor = valor;		
 	}
 
 	public Long getId() {
